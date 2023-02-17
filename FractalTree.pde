@@ -18,6 +18,7 @@ public void draw()
 
 public void drawBranches(int x,int y, double branchLength, double angle, int r, int g, int b) 
 { 
+  branchLength *= fractionLength;
   if(branchLength < 30){
     r = (int)(Math.random()*101+205); //255;
     g = (int)(Math.random()*101+105); //155;
@@ -31,8 +32,6 @@ public void drawBranches(int x,int y, double branchLength, double angle, int r, 
   
   double angle1 = angle + branchAngle;
   double angle2 = angle - branchAngle;
-  
-  branchLength *= fractionLength;
   
   int endX1 = (int)(branchLength*Math.cos(angle1) + x);
   int endY1 = (int)(branchLength*Math.sin(angle1) + y);
